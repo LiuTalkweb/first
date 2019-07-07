@@ -3,15 +3,25 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>Demo</servlet-name>
-  	<display-name>Demo</display-name>
-  	<description></description>
-  	<servlet-class>com.study.controller.Demo</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>Demo</servlet-name>
-  	<url-pattern>/Demo.action</url-pattern>
-  </servlet-mapping>
+	<display-name>Archetype Created Web Application</display-name>
+  
+	<filter>
+		<filter-name>myFilter</filter-name>
+		<filter-class>com.study.filter.MyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>myFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+  
+	<servlet>
+		<servlet-name>Demo</servlet-name>
+		<display-name>Demo</display-name>
+		<description></description>
+		<servlet-class>com.study.controller.Demo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Demo</servlet-name>
+		<url-pattern>/demo.action</url-pattern>
+	</servlet-mapping>
 </web-app>
